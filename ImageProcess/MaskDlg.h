@@ -12,7 +12,7 @@ public:
 	virtual ~CMaskDlg();
 
 // 对话框数据
-	enum { IDD = IDD_MASK_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_MASK_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

@@ -43,28 +43,28 @@ CMorphologyDlg::~CMorphologyDlg()
 void CMorphologyDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_CBString(pDX, IDC_TYPE, m_Type);
-	DDX_Text(pDX, IDC_THRESHOLD, m_Threshold);
-	DDX_Control(pDX, IDC_THRESHOLD_SLD, m_ThresholdSld);
-	DDX_Text(pDX, IDC_XPOS, m_xPos);
-	DDX_Text(pDX, IDC_YPOS, m_yPos);
-	DDX_Check(pDX, IDC_PREVIEW, m_bPreview);
-	DDX_Check(pDX, IDC_B_AND_W, m_B_and_W);
-	DDX_Control(pDX, IDC_THRESHOLD, m_Threshold_ctrl);
+	DDX_CBString(pDX, IDC_TOOL_IMAGEPROCESS_TYPE, m_Type);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_THRESHOLD, m_Threshold);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_THRESHOLD_SLD, m_ThresholdSld);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_XPOS, m_xPos);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_YPOS, m_yPos);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_PREVIEW, m_bPreview);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_B_AND_W, m_B_and_W);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_THRESHOLD, m_Threshold_ctrl);
 }
 
 
 BEGIN_MESSAGE_MAP(CMorphologyDlg, CDialogEx)
 	ON_WM_PAINT()
-	ON_NOTIFY(NM_CUSTOMDRAW, IDC_THRESHOLD_SLD, &CMorphologyDlg::OnNMCustomdrawThresholdSld)
+	ON_NOTIFY(NM_CUSTOMDRAW, IDC_TOOL_IMAGEPROCESS_THRESHOLD_SLD, &CMorphologyDlg::OnNMCustomdrawThresholdSld)
 	ON_WM_MOUSEMOVE()
 	ON_WM_LBUTTONDOWN()
-	ON_CBN_SELCHANGE(IDC_TYPE, &CMorphologyDlg::OnCbnSelchangeType)
+	ON_CBN_SELCHANGE(IDC_TOOL_IMAGEPROCESS_TYPE, &CMorphologyDlg::OnCbnSelchangeType)
 	ON_BN_CLICKED(IDOK, &CMorphologyDlg::OnBnClickedOk)
-	ON_BN_CLICKED(IDC_PREVIEW, &CMorphologyDlg::OnBnClickedPreview)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_PREVIEW, &CMorphologyDlg::OnBnClickedPreview)
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDMORPHOLOGYCANCEL, &CMorphologyDlg::OnBnClickedMorphologycancel)
-	ON_BN_CLICKED(IDC_B_AND_W, &CMorphologyDlg::OnBnClickedBAndW)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_B_AND_W, &CMorphologyDlg::OnBnClickedBAndW)
 	ON_WM_LBUTTONDBLCLK()
 END_MESSAGE_MAP()
 

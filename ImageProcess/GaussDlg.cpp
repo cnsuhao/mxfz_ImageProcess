@@ -26,9 +26,9 @@ CGaussDlg::~CGaussDlg()
 void CGaussDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_EDIT_R, r);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_R, r);
 	DDV_MinMaxInt(pDX, r, 0, 255);
-	DDX_Text(pDX, IDC_EDIT_SIGMA, m_sigma);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_SIGMA, m_sigma);
 	DDV_MinMaxDouble(pDX, m_sigma, 0, 255);
 }
 

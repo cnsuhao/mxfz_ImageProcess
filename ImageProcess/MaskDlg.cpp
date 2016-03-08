@@ -25,7 +25,7 @@ CMaskDlg::~CMaskDlg()
 void CMaskDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_EDIT1, m_MaskPresentage);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT1, m_MaskPresentage);
 }
 
 

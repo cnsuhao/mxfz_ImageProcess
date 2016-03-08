@@ -27,19 +27,19 @@ CThresholdExDlg::~CThresholdExDlg()
 void CThresholdExDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_CBString(pDX, IDC_METHOD_CMB, m_Method);
-	DDX_Text(pDX, IDC_THRESHOLD_EDIT, m_Threshold_int);
+	DDX_CBString(pDX, IDC_TOOL_IMAGEPROCESS_METHOD_CMB, m_Method);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_THRESHOLD_EDIT, m_Threshold_int);
 }
 
 
 BEGIN_MESSAGE_MAP(CThresholdExDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_CREATE()
-	ON_CBN_SELCHANGE(IDC_METHOD_CMB, &CThresholdExDlg::OnCbnSelchangeMethodCmb)
+	ON_CBN_SELCHANGE(IDC_TOOL_IMAGEPROCESS_METHOD_CMB, &CThresholdExDlg::OnCbnSelchangeMethodCmb)
 	ON_WM_MOUSEMOVE()
 	ON_WM_LBUTTONDOWN()
 	ON_BN_CLICKED(IDOK, &CThresholdExDlg::OnBnClickedOk)
-	ON_BN_CLICKED(IDCANCEL_THRESHOLD, &CThresholdExDlg::OnBnClickedThreshold)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_CANCEL_THRESHOLD, &CThresholdExDlg::OnBnClickedThreshold)
 END_MESSAGE_MAP()
 
 

@@ -27,17 +27,17 @@ CBilateralDlg::~CBilateralDlg()
 void CBilateralDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_R, r);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_R, r);
 	DDV_MinMaxInt(pDX, r, 0, 255);
-	DDX_Text(pDX, IDC_SIGMA_G, m_sigmaG);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_SIGMA_G, m_sigmaG);
 	DDV_MinMaxDouble(pDX, m_sigmaG, 0, 65535);
-	DDX_Text(pDX, IDC_SIGMA_S, m_sigmaS);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_SIGMA_S, m_sigmaS);
 	DDV_MinMaxDouble(pDX, m_sigmaS, 0, 65535);
 }
 
 
 BEGIN_MESSAGE_MAP(CBilateralDlg, CDialogEx)
-	ON_EN_CHANGE(IDC_R, &CBilateralDlg::OnEnChangeR)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_R, &CBilateralDlg::OnEnChangeR)
 	ON_BN_CLICKED(IDOK, &CBilateralDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 

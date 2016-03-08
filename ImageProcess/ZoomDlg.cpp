@@ -31,23 +31,23 @@ CZoomDlg::~CZoomDlg()
 void CZoomDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_ORG_H, m_Org_H);
-	DDX_Text(pDX, IDC_ORG_W, m_Org_W);
-	DDX_Text(pDX, IDC_DES_H, m_Des_H);
-	DDX_Text(pDX, IDC_DES_W, m_Des_W);
-	DDX_CBString(pDX, IDC_METHOD, m_Method);
-	DDX_Check(pDX, IDC_SCALE, m_bWHinScale);
-	DDX_Control(pDX, IDC_DES_H, m_Des_H_Control);
-	DDX_Control(pDX, IDC_DES_W, m_Des_W_Control);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_ORG_H, m_Org_H);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_ORG_W, m_Org_W);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_DES_H, m_Des_H);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_DES_W, m_Des_W);
+	DDX_CBString(pDX, IDC_TOOL_IMAGEPROCESS_METHOD, m_Method);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_SCALE, m_bWHinScale);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_DES_H, m_Des_H_Control);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_DES_W, m_Des_W_Control);
 }
 
 
 BEGIN_MESSAGE_MAP(CZoomDlg, CDialogEx)
 	ON_WM_CREATE()
-	ON_BN_CLICKED(IDC_SCALE, &CZoomDlg::OnBnClickedScale)
-	ON_EN_CHANGE(IDC_DES_H, &CZoomDlg::OnEnChangeDesH)
-	ON_EN_CHANGE(IDC_DES_W, &CZoomDlg::OnEnChangeDesW)
-	ON_CBN_SELCHANGE(IDC_METHOD, &CZoomDlg::OnCbnSelchangeMethod)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_SCALE, &CZoomDlg::OnBnClickedScale)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_DES_H, &CZoomDlg::OnEnChangeDesH)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_DES_W, &CZoomDlg::OnEnChangeDesW)
+	ON_CBN_SELCHANGE(IDC_TOOL_IMAGEPROCESS_METHOD, &CZoomDlg::OnCbnSelchangeMethod)
 END_MESSAGE_MAP()
 
 

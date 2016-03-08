@@ -28,24 +28,24 @@ CSmoothDlg::~CSmoothDlg()
 void CSmoothDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_SLIDER_X, m_Slider_x);
-	DDX_Control(pDX, IDC_SLIDER_Y, m_Slider_y);
-	DDX_Text(pDX, IDC_EDIT_X, m_data_x);
-	DDX_Text(pDX, IDC_EDIT_Y, m_data_y);
-	DDX_Check(pDX, IDC_CHECK_PREVIEW, m_bPreview);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_SLIDER_X, m_Slider_x);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_SLIDER_Y, m_Slider_y);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_X, m_data_x);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_Y, m_data_y);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_CHECK_PREVIEW, m_bPreview);
 }
 
 
 BEGIN_MESSAGE_MAP(CSmoothDlg, CDialogEx)
-	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_X, &CSmoothDlg::OnNMCustomdrawSliderX)
-	ON_NOTIFY(NM_CUSTOMDRAW, IDC_SLIDER_Y, &CSmoothDlg::OnNMCustomdrawSliderY)
-	ON_EN_CHANGE(IDC_EDIT_X, &CSmoothDlg::OnEnChangeEditX)
-	ON_EN_CHANGE(IDC_EDIT_Y, &CSmoothDlg::OnEnChangeEditY)
+	ON_NOTIFY(NM_CUSTOMDRAW, IDC_TOOL_IMAGEPROCESS_SLIDER_X, &CSmoothDlg::OnNMCustomdrawSliderX)
+	ON_NOTIFY(NM_CUSTOMDRAW, IDC_TOOL_IMAGEPROCESS_SLIDER_Y, &CSmoothDlg::OnNMCustomdrawSliderY)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_EDIT_X, &CSmoothDlg::OnEnChangeEditX)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_EDIT_Y, &CSmoothDlg::OnEnChangeEditY)
 	ON_BN_CLICKED(IDOK, &CSmoothDlg::OnBnClickedOk)
 	ON_WM_TIMER()
-	ON_BN_CLICKED(BTN_IDCANCEL, &CSmoothDlg::OnBnClickedIdcancel)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_CANCEL, &CSmoothDlg::OnBnClickedIdcancel)
 	ON_WM_CLOSE()
-	ON_BN_CLICKED(IDC_CHECK_PREVIEW, &CSmoothDlg::OnBnClickedCheckPreview)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_CHECK_PREVIEW, &CSmoothDlg::OnBnClickedCheckPreview)
 END_MESSAGE_MAP()
 
 

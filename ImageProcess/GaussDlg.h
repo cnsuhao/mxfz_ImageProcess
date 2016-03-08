@@ -12,7 +12,7 @@ public:
 	virtual ~CGaussDlg();
 
 // 对话框数据
-	enum { IDD = IDD_GAUSS_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_GAUSS_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

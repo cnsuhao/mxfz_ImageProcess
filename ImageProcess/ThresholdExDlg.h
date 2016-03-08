@@ -12,7 +12,7 @@ public:
 	virtual ~CThresholdExDlg();
 
 // 对话框数据
-	enum { IDD = IDD_THRESHOLD_EX_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_THRESHOLD_EX_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

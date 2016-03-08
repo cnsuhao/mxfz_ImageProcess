@@ -31,50 +31,50 @@ CFilterDefineDlg::~CFilterDefineDlg()
 void CFilterDefineDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_EDIT_00, m_data[0][0]);
-	DDX_Text(pDX, IDC_EDIT_01, m_data[0][1]);
-	DDX_Text(pDX, IDC_EDIT_02, m_data[0][2]);
-	DDX_Text(pDX, IDC_EDIT_03, m_data[0][3]);
-	DDX_Text(pDX, IDC_EDIT_04, m_data[0][4]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_00, m_data[0][0]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_01, m_data[0][1]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_02, m_data[0][2]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_03, m_data[0][3]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_04, m_data[0][4]);
 
-	DDX_Text(pDX, IDC_EDIT_10, m_data[1][0]);
-	DDX_Text(pDX, IDC_EDIT_11, m_data[1][1]);
-	DDX_Text(pDX, IDC_EDIT_12, m_data[1][2]);
-	DDX_Text(pDX, IDC_EDIT_13, m_data[1][3]);
-	DDX_Text(pDX, IDC_EDIT_14, m_data[1][4]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_10, m_data[1][0]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_11, m_data[1][1]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_12, m_data[1][2]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_13, m_data[1][3]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_14, m_data[1][4]);
 
-	DDX_Text(pDX, IDC_EDIT_20, m_data[2][0]);
-	DDX_Text(pDX, IDC_EDIT_21, m_data[2][1]);
-	DDX_Text(pDX, IDC_EDIT_22, m_data[2][2]);
-	DDX_Text(pDX, IDC_EDIT_23, m_data[2][3]);
-	DDX_Text(pDX, IDC_EDIT_24, m_data[2][4]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_20, m_data[2][0]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_21, m_data[2][1]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_22, m_data[2][2]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_23, m_data[2][3]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_24, m_data[2][4]);
 
-	DDX_Text(pDX, IDC_EDIT_30, m_data[3][0]);
-	DDX_Text(pDX, IDC_EDIT_31, m_data[3][1]);
-	DDX_Text(pDX, IDC_EDIT_32, m_data[3][2]);
-	DDX_Text(pDX, IDC_EDIT_33, m_data[3][3]);
-	DDX_Text(pDX, IDC_EDIT_34, m_data[3][4]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_30, m_data[3][0]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_31, m_data[3][1]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_32, m_data[3][2]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_33, m_data[3][3]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_34, m_data[3][4]);
 
-	DDX_Text(pDX, IDC_EDIT_40, m_data[4][0]);
-	DDX_Text(pDX, IDC_EDIT_41, m_data[4][1]);
-	DDX_Text(pDX, IDC_EDIT_42, m_data[4][2]);
-	DDX_Text(pDX, IDC_EDIT_43, m_data[4][3]);
-	DDX_Text(pDX, IDC_EDIT_44, m_data[4][4]);
-	DDX_Text(pDX, IDC_EDIT_DIVIDE, m_data_divide);
-	DDX_Text(pDX, IDC_EDIT_MOVE, m_data_move);
-	DDX_Check(pDX, IDC_CHECK_PREVIEW, m_bPreview);
-	DDX_CBString(pDX, IDC_COMBO_DEFAULT, m_Default);
-	//DDX_Control(pDX, IDC_EDIT_00, m_dtat_aa);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_40, m_data[4][0]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_41, m_data[4][1]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_42, m_data[4][2]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_43, m_data[4][3]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_44, m_data[4][4]);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_DIVIDE, m_data_divide);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_MOVE, m_data_move);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_CHECK_PREVIEW, m_bPreview);
+	DDX_CBString(pDX, IDC_TOOL_IMAGEPROCESS_COMBO_DEFAULT, m_Default);
+	//DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_00, m_dtat_aa);
 }
 
 
 BEGIN_MESSAGE_MAP(CFilterDefineDlg, CDialogEx)
 	ON_WM_TIMER()
 	ON_WM_CREATE()
-	ON_BN_CLICKED(IDC_CHECK_PREVIEW, &CFilterDefineDlg::OnBnClickedCheckPreview)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_CHECK_PREVIEW, &CFilterDefineDlg::OnBnClickedCheckPreview)
 	ON_BN_CLICKED(IDOK, &CFilterDefineDlg::OnBnClickedOk)
 	ON_WM_CLOSE()
-	ON_CBN_SELCHANGE(IDC_COMBO_DEFAULT, &CFilterDefineDlg::OnCbnSelchangeComboDefault)
+	ON_CBN_SELCHANGE(IDC_TOOL_IMAGEPROCESS_COMBO_DEFAULT, &CFilterDefineDlg::OnCbnSelchangeComboDefault)
 	ON_WM_SHOWWINDOW()
 END_MESSAGE_MAP()
 

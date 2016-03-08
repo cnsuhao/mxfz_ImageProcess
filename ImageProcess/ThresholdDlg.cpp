@@ -25,7 +25,7 @@ CThresholdDlg::~CThresholdDlg()
 void CThresholdDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_EDIT_THRESHOLD, m_Threshold);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_THRESHOLD, m_Threshold);
 	DDV_MinMaxInt(pDX, m_Threshold, 0, 255);
 }
 

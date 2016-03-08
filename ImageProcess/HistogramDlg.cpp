@@ -29,27 +29,27 @@ CHistogramDlg::~CHistogramDlg()
 void CHistogramDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_CBString(pDX, IDC_COLOR_SELECT, m_ColorSelect);
-	DDX_Control(pDX, IDC_MIN, m_Min);
-	DDX_Control(pDX, IDC_MAX, m_Max);
-	DDX_Check(pDX, IDC_PREVIEW, m_bPreview);
+	DDX_CBString(pDX, IDC_TOOL_IMAGEPROCESS_COLOR_SELECT, m_ColorSelect);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_MIN, m_Min);
+	DDX_Control(pDX, IDC_TOOL_IMAGEPROCESS_MAX, m_Max);
+	DDX_Check(pDX, IDC_TOOL_IMAGEPROCESS_PREVIEW, m_bPreview);
 }
 
 
 BEGIN_MESSAGE_MAP(CHistogramDlg, CDialogEx)
 	ON_WM_PAINT()
-	ON_CBN_SELCHANGE(IDC_COLOR_SELECT, &CHistogramDlg::OnCbnSelchangeColorSelect)
+	ON_CBN_SELCHANGE(IDC_TOOL_IMAGEPROCESS_COLOR_SELECT, &CHistogramDlg::OnCbnSelchangeColorSelect)
 	ON_WM_TIMER()
 	ON_WM_CREATE()
-	ON_EN_CHANGE(IDC_MIN, &CHistogramDlg::OnEnChangeMin)
-	ON_EN_CHANGE(IDC_MAX, &CHistogramDlg::OnEnChangeMax)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_MIN, &CHistogramDlg::OnEnChangeMin)
+	ON_EN_CHANGE(IDC_TOOL_IMAGEPROCESS_MAX, &CHistogramDlg::OnEnChangeMax)
 	ON_WM_LBUTTONDOWN()
 	ON_WM_RBUTTONDOWN()
 	ON_WM_MOUSEMOVE()
 	ON_BN_CLICKED(IDOK, &CHistogramDlg::OnBnClickedOk)
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDCANCEL_HISTOGRAM, &CHistogramDlg::OnBnClickedHistogram)
-	ON_BN_CLICKED(IDC_PREVIEW, &CHistogramDlg::OnBnClickedPreview)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_PREVIEW, &CHistogramDlg::OnBnClickedPreview)
 END_MESSAGE_MAP()
 
 

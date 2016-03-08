@@ -14,7 +14,7 @@ public:
 	virtual ~CMorphologyDlg();
 
 // 对话框数据
-	enum { IDD = IDD_MORPHOLOGY_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_MORPHOLOGY_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

@@ -12,7 +12,7 @@ public:
 	virtual ~CCurveDlg();
 
 // 对话框数据
-	enum { IDD = IDD_CURVE_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_CURVE_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

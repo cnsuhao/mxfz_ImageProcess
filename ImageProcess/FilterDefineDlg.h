@@ -13,7 +13,7 @@ public:
 	virtual ~CFilterDefineDlg();
 
 // 对话框数据
-	enum { IDD = IDD_FILTER_DEFINE_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_FILTER_DEFINE_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

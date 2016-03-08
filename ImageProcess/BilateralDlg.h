@@ -12,7 +12,7 @@ public:
 	virtual ~CBilateralDlg();
 
 // 对话框数据
-	enum { IDD = IDD_BILATERAL_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_BILATERAL_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

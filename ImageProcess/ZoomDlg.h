@@ -13,7 +13,7 @@ public:
 	virtual ~CZoomDlg();
 
 // 对话框数据
-	enum { IDD = IDD_ZOOM_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_ZOOM_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

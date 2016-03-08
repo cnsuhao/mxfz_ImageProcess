@@ -42,7 +42,7 @@ public:
 	CImageProcessDlg(CWnd* pParent = NULL);	// 标准构造函数
 
 // 对话框数据
-	enum { IDD = IDD_MFCBMP_DIALOG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_MFCBMP_DIALOG };
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
