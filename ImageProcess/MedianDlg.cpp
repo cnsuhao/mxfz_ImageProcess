@@ -26,9 +26,9 @@ CMedianDlg::~CMedianDlg()
 void CMedianDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Text(pDX, IDC_EDIT_MEDIAN_X, m_data_x);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_MEDIAN_X, m_data_x);
 	DDV_MinMaxInt(pDX, m_data_x, 1, 10);
-	DDX_Text(pDX, IDC_EDIT_MEDIAN_Y, m_data_y);
+	DDX_Text(pDX, IDC_TOOL_IMAGEPROCESS_EDIT_MEDIAN_Y, m_data_y);
 	DDV_MinMaxInt(pDX, m_data_y, 1, 10);
 }
 

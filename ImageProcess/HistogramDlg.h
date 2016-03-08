@@ -13,7 +13,7 @@ public:
 	virtual ~CHistogramDlg();
 
 // 对话框数据
-	enum { IDD = IDD_HISTOGRAM_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_HISTOGRAM_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

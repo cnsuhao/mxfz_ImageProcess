@@ -20,7 +20,7 @@ public:
 	CAboutDlg();
 
 	// Dialog Data
-	enum { IDD = IDD_ABOUTBOX };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_ABOUTBOX };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
@@ -46,10 +46,10 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
-	ON_STN_CLICKED(IDC_URL_ABOUTBOX_LINK, &CAboutDlg::OnStnClickedUrlAboutboxLink)
+	ON_STN_CLICKED(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_LINK, &CAboutDlg::OnStnClickedUrlAboutboxLink)
 	ON_WM_DESTROY()
 	ON_WM_CTLCOLOR()
-	ON_STN_CLICKED(IDC_URL_ABOUTBOX_BLOGLINK, &CAboutDlg::OnStnClickedUrlAboutboxBloglink)
+	ON_STN_CLICKED(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_BLOGLINK, &CAboutDlg::OnStnClickedUrlAboutboxBloglink)
 END_MESSAGE_MAP()
 
 void CAboutDlg::OnStnClickedUrlAboutboxLink()
@@ -72,8 +72,8 @@ BOOL CAboutDlg::OnInitDialog()
 #ifndef IDC_HAND         
 	MAKEINTRESOURCE(32649)
 #endif
-		::SetClassLong(GetDlgItem(IDC_URL_ABOUTBOX_LINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_HAND));
-	::SetClassLong(GetDlgItem(IDC_URL_ABOUTBOX_BLOGLINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_HAND));
+		::SetClassLong(GetDlgItem(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_LINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_HAND));
+	::SetClassLong(GetDlgItem(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_BLOGLINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_HAND));
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// EXCEPTION: OCX Property Pages should return FALSE
@@ -83,8 +83,8 @@ void CAboutDlg::OnDestroy()
 	CDialog::OnDestroy();
 
 	// TODO: Add your message handler code here
-	::SetClassLong(GetDlgItem(IDC_URL_ABOUTBOX_LINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_ARROW));
-	::SetClassLong(GetDlgItem(IDC_URL_ABOUTBOX_BLOGLINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_ARROW));
+	::SetClassLong(GetDlgItem(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_LINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_ARROW));
+	::SetClassLong(GetDlgItem(IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_BLOGLINK)->m_hWnd,GCL_HCURSOR,(LONG)LoadCursor(NULL,IDC_ARROW));
 }
 
 
@@ -93,8 +93,8 @@ HBRUSH CAboutDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 
 	// TODO:  Change any attributes of the DC here
-	if(pWnd->GetDlgCtrlID()==IDC_URL_ABOUTBOX_LINK
-		|| pWnd->GetDlgCtrlID()==IDC_URL_ABOUTBOX_BLOGLINK)
+	if(pWnd->GetDlgCtrlID()==IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_LINK
+		|| pWnd->GetDlgCtrlID()==IDC_TOOL_IMAGEPROCESS_URL_ABOUTBOX_BLOGLINK)
 		pDC->SetTextColor(RGB(0,0,255));
 
 	// TODO:  Return a different brush if the default is not desired
@@ -135,71 +135,71 @@ BEGIN_MESSAGE_MAP(CImageProcessDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_BN_CLICKED(IDC_FILE_OPEN, &CImageProcessDlg::OnBnClickedFileOpen)
-	ON_BN_CLICKED(IDC_SAVE_FILE, &CImageProcessDlg::OnBnClickedSaveFile)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_FILE_OPEN, &CImageProcessDlg::OnBnClickedFileOpen)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_SAVE_FILE, &CImageProcessDlg::OnBnClickedSaveFile)
 	ON_WM_DROPFILES()
-	ON_BN_CLICKED(IDC_SAVE_TEXT, &CImageProcessDlg::OnBnClickedSaveText)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_SAVE_TEXT, &CImageProcessDlg::OnBnClickedSaveText)
 	ON_WM_RBUTTONUP()
-	ON_COMMAND(ID_POPUP_FILE_OPEN, &CImageProcessDlg::OnPopupFileOpen)
-	ON_COMMAND(ID_POPUP_FILE_SAVE, &CImageProcessDlg::OnPopupFileSave)
-	ON_COMMAND(ID_POPUP_FILE_SAVE_TEXT, &CImageProcessDlg::OnPopupFileSaveText)
-	ON_COMMAND(ID_POPUP_FILE_INFO, &CImageProcessDlg::OnPopupFileInfo)
-	ON_COMMAND(ID_POPUP_REVERSE_COLOR, &CImageProcessDlg::OnPopupReverseColor)
-	ON_COMMAND(ID_POPUP_REVERSE_LR, &CImageProcessDlg::OnPopupReverseLr)
-	ON_COMMAND(ID_POPUP_REVERSE_UD, &CImageProcessDlg::OnPopupReverseUd)
-	ON_COMMAND(ID_POPUP_REVERSE_180, &CImageProcessDlg::OnPopupReverse180)
-	ON_BN_CLICKED(IDC_FILE_INFO, &CImageProcessDlg::OnBnClickedFileInfo)
-	ON_COMMAND(ID_POPUP_33_SMOOTH, &CImageProcessDlg::OnPopup33Smooth)
-	ON_COMMAND(ID_POPUP_55_SMOOTH, &CImageProcessDlg::OnPopup55Smooth)
-	ON_COMMAND(ID_POPUP_AVG_SMOOTH, &CImageProcessDlg::OnPopupAvgSmooth)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_FILE_OPEN, &CImageProcessDlg::OnPopupFileOpen)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_FILE_SAVE, &CImageProcessDlg::OnPopupFileSave)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_FILE_SAVE_TEXT, &CImageProcessDlg::OnPopupFileSaveText)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_FILE_INFO, &CImageProcessDlg::OnPopupFileInfo)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_REVERSE_COLOR, &CImageProcessDlg::OnPopupReverseColor)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_REVERSE_LR, &CImageProcessDlg::OnPopupReverseLr)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_REVERSE_UD, &CImageProcessDlg::OnPopupReverseUd)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_REVERSE_180, &CImageProcessDlg::OnPopupReverse180)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_FILE_INFO, &CImageProcessDlg::OnBnClickedFileInfo)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_33_SMOOTH, &CImageProcessDlg::OnPopup33Smooth)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_55_SMOOTH, &CImageProcessDlg::OnPopup55Smooth)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_AVG_SMOOTH, &CImageProcessDlg::OnPopupAvgSmooth)
 	ON_MESSAGE(WM_SMOOTH_OK, &CImageProcessDlg::OnSmoothOk)
 	ON_MESSAGE(WM_CANCEL_SMOOTH, &CImageProcessDlg::OnCancelSmooth)
 	ON_MESSAGE(WM_SMOOTH_CERTAIN, &CImageProcessDlg::OnSmoothCertain)
-	ON_COMMAND(ID_POPUP_33_MEDIAN, &CImageProcessDlg::OnPopup33Median)
-	ON_COMMAND(ID_POPUP_55_MEDIAN, &CImageProcessDlg::OnPopup55Median)
-	ON_COMMAND(ID_POPUP_MEDIAN, &CImageProcessDlg::OnPopupMedian)
-	ON_COMMAND(ID_FILTER_DEFINE, &CImageProcessDlg::OnFilterDefine)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_33_MEDIAN, &CImageProcessDlg::OnPopup33Median)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_55_MEDIAN, &CImageProcessDlg::OnPopup55Median)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_MEDIAN, &CImageProcessDlg::OnPopupMedian)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_FILTER_DEFINE, &CImageProcessDlg::OnFilterDefine)
 	ON_MESSAGE(WM_FILTER_DEFINE_OK, &CImageProcessDlg::OnFilterDefineOk)
 	ON_MESSAGE(WM_FILTER_DEFINE_CANCEL, &CImageProcessDlg::OnFilterDefineCancel)
 	ON_MESSAGE(WM_FILTER_DEFINE_CERTAIN, &CImageProcessDlg::OnFilterDefineCertain)
-	ON_COMMAND(ID_POPUP_CURVE, &CImageProcessDlg::OnPopupCurve)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_CURVE, &CImageProcessDlg::OnPopupCurve)
 	ON_MESSAGE(WM_CURVE_OK, &CImageProcessDlg::OnCurveOk)
 	ON_MESSAGE(WM_CURVE_CERTAIN, &CImageProcessDlg::OnCurveCertain)
 	ON_MESSAGE(WM_CURVE_CANCEL, &CImageProcessDlg::OnCurveCancel)
-	ON_COMMAND(ID_HISTOGRAM_EQUALIZATION, &CImageProcessDlg::OnHistogramEqualization)
-	ON_BN_CLICKED(IDC_BTN_RELOAD, &CImageProcessDlg::OnBnClickedBtnReload)
-	ON_COMMAND(ID_POPUP_RELOAD, &CImageProcessDlg::OnPopupReload)
-	ON_COMMAND(ID_POPUP_THRESHOLD, &CImageProcessDlg::OnPopupThreshold)
-	ON_COMMAND(ID_POPUP_LPLS_4, &CImageProcessDlg::OnPopupLpls4)
-	ON_COMMAND(ID_POPUP_LPLS_8, &CImageProcessDlg::OnPopupLpls8)
-	ON_COMMAND(ID_HISTOGRAM, &CImageProcessDlg::OnHistogram)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_HISTOGRAM_EQUALIZATION, &CImageProcessDlg::OnHistogramEqualization)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_BTN_RELOAD, &CImageProcessDlg::OnBnClickedBtnReload)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_RELOAD, &CImageProcessDlg::OnPopupReload)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_THRESHOLD, &CImageProcessDlg::OnPopupThreshold)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_LPLS_4, &CImageProcessDlg::OnPopupLpls4)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_LPLS_8, &CImageProcessDlg::OnPopupLpls8)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_HISTOGRAM, &CImageProcessDlg::OnHistogram)
 	ON_MESSAGE(WM_HISTOGRAM_OK, &CImageProcessDlg::OnHistogramOk)
 	ON_MESSAGE(WM_HISTOGRAM_CERTIAN, &CImageProcessDlg::OnHistogramCertian)
 	ON_MESSAGE(WM_HISTOGRAM_CANCEL, &CImageProcessDlg::OnHistogramCancel)
-	ON_COMMAND(ID_POPUP_RGB_2_GRAY, &CImageProcessDlg::OnPopupRgb2Gray)
-	ON_COMMAND(ID_POPUP_ZOOM, &CImageProcessDlg::OnPopupZoom)
-	ON_COMMAND(ID_POPUP_DFT, &CImageProcessDlg::OnPopupDft)
-	ON_COMMAND(ID_POPUP_FFT, &CImageProcessDlg::OnPopupFft)
-	ON_COMMAND(ID_POPUP_IFFT, &CImageProcessDlg::OnPopupIfft)
-	ON_COMMAND(ID_POPUP_IDFT, &CImageProcessDlg::OnPopupIdft)
-	ON_COMMAND(ID_FFT_FILTER, &CImageProcessDlg::OnFftFilter)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_RGB_2_GRAY, &CImageProcessDlg::OnPopupRgb2Gray)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_ZOOM, &CImageProcessDlg::OnPopupZoom)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_DFT, &CImageProcessDlg::OnPopupDft)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_FFT, &CImageProcessDlg::OnPopupFft)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_IFFT, &CImageProcessDlg::OnPopupIfft)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_IDFT, &CImageProcessDlg::OnPopupIdft)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_FFT_FILTER, &CImageProcessDlg::OnFftFilter)
 	ON_MESSAGE(WM_FFT_CANCEL, &CImageProcessDlg::OnFftCancel)
-	ON_BN_CLICKED(IDC_BTN_CONNECT_ME, &CImageProcessDlg::OnBnClickedBtnConnectMe)
-	ON_COMMAND(ID_POPUP_MORPHOLOGY, &CImageProcessDlg::OnPopupMorphology)
+	ON_BN_CLICKED(IDC_TOOL_IMAGEPROCESS_BTN_CONNECT_ME, &CImageProcessDlg::OnBnClickedBtnConnectMe)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_MORPHOLOGY, &CImageProcessDlg::OnPopupMorphology)
 	ON_MESSAGE(WM_MORPHOLOGY_OK, &CImageProcessDlg::OnMorphologyOk)
 	ON_MESSAGE(WM_MORPHOLOGY_CERTAIN, &CImageProcessDlg::OnMorphologyCertain)
 	ON_MESSAGE(WM_MORPHOLOGY_CANCEL, &CImageProcessDlg::OnMorphologyCancel)
-	ON_COMMAND(ID_POPUP_GETBOARD, &CImageProcessDlg::OnPopupGetboard)
-	ON_COMMAND(ID_POPUP_MASK, &CImageProcessDlg::OnPopupMask)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_GETBOARD, &CImageProcessDlg::OnPopupGetboard)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_MASK, &CImageProcessDlg::OnPopupMask)
 	ON_WM_MOUSEMOVE()
 	ON_WM_SETCURSOR()
-	ON_COMMAND(ID_POPUP_THRESHOLD_EX, &CImageProcessDlg::OnPopupThresholdEx)
-	ON_COMMAND(ID_POPUP_CUT, &CImageProcessDlg::OnPopupCut)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_THRESHOLD_EX, &CImageProcessDlg::OnPopupThresholdEx)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_CUT, &CImageProcessDlg::OnPopupCut)
 	ON_WM_LBUTTONDOWN()
 	ON_WM_LBUTTONUP()
-	ON_COMMAND(ID_POPUP_CUT_INFO, &CImageProcessDlg::OnPopupCutInfo)
-	ON_COMMAND(ID_POPUP_BILATERAL, &CImageProcessDlg::OnPopupBilateral)
-	ON_COMMAND(ID_POPUP_GAUSS, &CImageProcessDlg::OnPopupGauss)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_CUT_INFO, &CImageProcessDlg::OnPopupCutInfo)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_BILATERAL, &CImageProcessDlg::OnPopupBilateral)
+	ON_COMMAND(ID_TOOL_IMAGEPROCESS_POPUP_GAUSS, &CImageProcessDlg::OnPopupGauss)
 END_MESSAGE_MAP()
 
 
@@ -567,7 +567,7 @@ void CImageProcessDlg::OnRButtonUp(UINT nFlags, CPoint point)
 
 			default: str=_T("24λͼ");break;
 		}
-		m->ModifyMenu(ID_POPUP_POINT_INFO,MF_BYCOMMAND,ID_POPUP_POINT_INFO,str);
+		m->ModifyMenu(ID_TOOL_IMAGEPROCESS_POPUP_POINT_INFO,MF_BYCOMMAND,ID_TOOL_IMAGEPROCESS_POPUP_POINT_INFO,str);
 		m->TrackPopupMenu(TPM_LEFTALIGN,pot.x,pot.y,this);
 	}
 	CDialogEx::OnRButtonUp(nFlags, point);
@@ -694,7 +694,7 @@ void CImageProcessDlg::OnPopupAvgSmooth()
 		return;
 	}
 	CSmoothDlg *Sdlg=new CSmoothDlg;
-	Sdlg->Create(IDD_SMOOTH_DLG);
+	Sdlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_SMOOTH_DLG);
 	Sdlg->ShowWindow(SW_SHOW);
 	m_bSmoothDlgOpened=1;
 }
@@ -782,7 +782,7 @@ void CImageProcessDlg::OnFilterDefine()
 		return;
 	}
 	m_FDDlg=new CFilterDefineDlg;
-	m_FDDlg->Create(IDD_FILTER_DEFINE_DLG);
+	m_FDDlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_FILTER_DEFINE_DLG);
 	m_FDDlg->ShowWindow(SW_SHOW);
 	m_bFilterDlgOpened=1;
 }
@@ -835,7 +835,7 @@ void CImageProcessDlg::OnPopupCurve()
 	}
 	m_CDlg=new CCurveDlg;
 	m_CDlg->SetColorCount(m_Bmp.GetColor());
-	m_CDlg->Create(IDD_CURVE_DLG);
+	m_CDlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_CURVE_DLG);
 	m_CDlg->ShowWindow(SW_SHOW);
 	m_bCurveDlgOpened=1;
 }
@@ -1022,7 +1022,7 @@ void CImageProcessDlg::OnHistogram()
 		return;
 	}
 	m_HDlg=new CHistogramDlg;
-	m_HDlg->Create(IDD_HISTOGRAM_DLG);
+	m_HDlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_HISTOGRAM_DLG);
 	m_HDlg->ShowWindow(SW_SHOW);
 	m_bHistogramDlgOpened=1;
 }
@@ -1196,7 +1196,7 @@ void CImageProcessDlg::OnFftFilter()
 	m_Bmp.FFT();
 	m_Bmp.RestoreRGB();
 	m_FFTDlg=new CFFTDlg;
-	m_FFTDlg->Create(IDD_FFT_DLG);
+	m_FFTDlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_FFT_DLG);
 	m_FFTDlg->ShowWindow(SW_SHOW);
 	m_bBusy=0;
 	InvalidateRect(m_ShowRect,0);
@@ -1232,7 +1232,7 @@ void CImageProcessDlg::OnPopupMorphology()
 	}
 	bool filter[9][9]={0};
 	m_MDlg=new CMorphologyDlg;
-	m_MDlg->Create(IDD_MORPHOLOGY_DLG);
+	m_MDlg->Create(IDD_DIALOG_TOOL_IMAGEPROCESS_MORPHOLOGY_DLG);
 	m_MDlg->ShowWindow(SW_SHOW);
 	m_bMorphologyOpened=1;
 }
@@ -1430,11 +1430,11 @@ BOOL CImageProcessDlg::OnSetCursor(CWnd* pWnd, UINT nHitTest, UINT message)
 	{
 		if(m_bIsCutting)
 		{
-			SetCursor(LoadCursor(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDC_AIR_CURSOR_CUT)));
+			SetCursor(LoadCursor(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDC_TOOL_IMAGEPROCESS_AIR_CURSOR_CUT)));
 		}
 		else
 		{
-			SetCursor(LoadCursor(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDC_AIR_CURSOR)));
+			SetCursor(LoadCursor(AfxGetApp()->m_hInstance,MAKEINTRESOURCE(IDC_TOOL_IMAGEPROCESS_AIR_CURSOR)));
 		}
 	}
 	else

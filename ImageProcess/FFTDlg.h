@@ -13,7 +13,7 @@ public:
 	virtual ~CFFTDlg();
 
 // 对话框数据
-	enum { IDD = IDD_FFT_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_FFT_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

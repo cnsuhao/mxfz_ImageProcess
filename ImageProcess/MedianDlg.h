@@ -12,7 +12,7 @@ public:
 	virtual ~CMedianDlg();
 
 // 对话框数据
-	enum { IDD = IDD_MEDIAN_DLG };
+	enum { IDD = IDD_DIALOG_TOOL_IMAGEPROCESS_MEDIAN_DLG };
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
