@@ -552,7 +552,7 @@ void CImageProcessDlg::OnRButtonUp(UINT nFlags, CPoint point)
 		}
 
 		CMenu Menu,*m;
-		Menu.LoadMenu(IDR_POPUP_MENU);
+		Menu.LoadMenu(IDR__TOOL_IMAGEPROCESS_POPUP_MENU);
 		CPoint pot;
 		GetCursorPos(&pot);
 		m=Menu.GetSubMenu(0);
