@@ -72,6 +72,8 @@ END_MESSAGE_MAP()
 
 BOOL CMorphologyDlg::OnInitDialog()
 {
+	CDialogEx::OnInitDialog();
+
 	CComboBox* pCComboBox = NULL;
 	long lCursor = 0x00;
 	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_TYPE);
@@ -82,7 +84,7 @@ BOOL CMorphologyDlg::OnInitDialog()
 	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
 	pCComboBox->SetCurSel(0x00);
 
-	CDialogEx::OnInitDialog();
+
 	m_ThresholdSld.SetRange(0,255);
 	m_ThresholdSld.SetTicFreq(1);
 	m_ThresholdSld.SetPos(128);
