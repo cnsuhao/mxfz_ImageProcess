@@ -6,7 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "HistogramDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CHistogramDlg 对话框
 
@@ -205,6 +205,18 @@ int CHistogramDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 BOOL CHistogramDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_COLOR_SELECT);
+	pCComboBox->InsertString(lCursor++, _T("RGB"));
+	pCComboBox->InsertString(lCursor++, _T("红"));
+	pCComboBox->InsertString(lCursor++, _T("绿"));
+	pCComboBox->InsertString(lCursor++, _T("蓝"));
+	pCComboBox->InsertString(lCursor++, _T("灰度"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
 	m_Min.SetWindowText(_T("0"));
 	m_Max.SetWindowText(_T("255"));
 	return 0;

@@ -6,7 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "ZoomDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CZoomDlg 对话框
 
@@ -143,4 +143,22 @@ void CZoomDlg::OnCbnSelchangeMethod()
 	// TODO: 在此添加控件通知处理程序代码
 	UpdateData();
 	UpdateData(0);
+}
+
+BOOL CZoomDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  Add extra initialization here
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_METHOD);
+	pCComboBox->InsertString(lCursor++, _T("邻近"));
+	pCComboBox->InsertString(lCursor++, _T("两次线性"));
+	pCComboBox->InsertString(lCursor++, _T("两次立方"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// EXCEPTION: OCX Property Pages should return FALSE
 }

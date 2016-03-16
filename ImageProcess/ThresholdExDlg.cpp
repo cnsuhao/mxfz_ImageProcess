@@ -5,7 +5,7 @@
 #include "ImageProcess.h"
 #include "ThresholdExDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CThresholdExDlg 对话框
 
@@ -233,4 +233,23 @@ void CThresholdExDlg::OnCancel()
 	if(m_Color!=1&&PathFileExists(_T("tmp")))
 		m_Bmp->Open("tmp");
 	CDialogEx::OnCancel();
+}
+
+BOOL CThresholdExDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  Add extra initialization here
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_METHOD_CMB);
+	pCComboBox->InsertString(lCursor++, _T("直接阈值"));
+	pCComboBox->InsertString(lCursor++, _T("大津法"));
+	pCComboBox->InsertString(lCursor++, _T("迭代法"));
+	pCComboBox->InsertString(lCursor++, _T("对半分"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// EXCEPTION: OCX Property Pages should return FALSE
 }

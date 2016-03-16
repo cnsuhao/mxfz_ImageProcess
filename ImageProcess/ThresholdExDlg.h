@@ -47,4 +47,5 @@ public:
 	afx_msg void OnBnClickedOk();
 	afx_msg void OnBnClickedThreshold();
 	virtual void OnCancel();
+	virtual BOOL OnInitDialog();
 };

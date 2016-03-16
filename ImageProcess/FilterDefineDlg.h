@@ -37,4 +37,5 @@ public:
 	virtual void OnCancel();
 	afx_msg void OnCbnSelchangeComboDefault();
 	afx_msg void OnShowWindow(BOOL bShow, UINT nStatus);
+	virtual BOOL OnInitDialog();
 };

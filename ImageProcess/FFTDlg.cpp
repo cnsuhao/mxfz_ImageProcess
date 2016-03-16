@@ -6,7 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "FFTDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CFFTDlg 对话框
 
@@ -466,4 +466,30 @@ void CFFTDlg::OnBnClickedOk()
 	// TODO: 在此添加控件通知处理程序代码
 	GetParent()->SendMessage(WM_FFT_CANCEL);
 	CDialogEx::OnOK();
+}
+
+BOOL CFFTDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_FILTER);
+	pCComboBox->InsertString(lCursor++, _T("无"));
+	pCComboBox->InsertString(lCursor++, _T("低通"));
+	pCComboBox->InsertString(lCursor++, _T("高通"));
+	pCComboBox->InsertString(lCursor++, _T("带通"));
+	pCComboBox->InsertString(lCursor++, _T("带阻"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+	
+	lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_FILTER_TYPE);
+	pCComboBox->InsertString(lCursor++, _T("理想滤波器"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
+	// TODO:  Add extra initialization here
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// EXCEPTION: OCX Property Pages should return FALSE
 }
