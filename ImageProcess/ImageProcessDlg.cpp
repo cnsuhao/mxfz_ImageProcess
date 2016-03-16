@@ -482,7 +482,10 @@ void CImageProcessDlg::OnBnClickedSaveText()
 		return;
 	}
 
-	CFileDialog Fdlg(false,NULL,_T("注意：生成本文文档可能会出现停止运行的情况，最好先保存一下。"),OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,_T("这次不用Bmp了你就随便写个名字吧不用加后缀的我会帮你加(*.txt)|*.txt|"),NULL,0,TRUE);
+	int iStart =  m_FileName.ReverseFind(_T('\\'));
+	int iEnd =  m_FileName.ReverseFind(_T('.'));
+	CString cstrFileName = m_FileName.Mid(iStart+1, iEnd-iStart-1);
+	CFileDialog Fdlg(false,NULL,cstrFileName,OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,_T("Text Files (*.txt)|*.txt|"),NULL,0,TRUE);
 	if(IDOK!=Fdlg.DoModal())
 	{
 		return;
@@ -552,7 +555,7 @@ void CImageProcessDlg::OnRButtonUp(UINT nFlags, CPoint point)
 		}
 
 		CMenu Menu,*m;
-		Menu.LoadMenu(IDR__TOOL_IMAGEPROCESS_POPUP_MENU);
+		Menu.LoadMenu(IDR_TOOL_IMAGEPROCESS_POPUP_MENU);
 		CPoint pot;
 		GetCursorPos(&pot);
 		m=Menu.GetSubMenu(0);

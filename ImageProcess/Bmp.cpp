@@ -31,7 +31,7 @@ Bmp::~Bmp(void)//析构函数
 {
 }
 
-bool Bmp::Open(char* FileName)//打开图片
+bool Bmp::Open(const char* FileName)//打开图片
 {
 	if(Exist())
 	{
@@ -104,7 +104,7 @@ bool Bmp::Open(char* FileName)//打开图片
 	return true;//读取成功，返回
 }
 
-bool Bmp::Save(char* FileName)//保存图片
+bool Bmp::Save(const char* FileName)//保存图片
 {
 
 	FILE *fp;
@@ -227,14 +227,18 @@ void Bmp::ReverseColor()//反色
 	}
 }
 
-bool Bmp::SaveAsTxt(char* FileName)//存为文本文档
+bool Bmp::SaveAsTxt(const char* FileName)//存为文本文档
 {
+	long lFileNameLen = strlen(FileName)+7;
+	char* pFileName = new char[lFileNameLen];
+	memset(pFileName, 0x00, lFileNameLen);
+	StrCpyA(pFileName, FileName);
 	fstream f;//建立文件类，为了方便这里使用C++函数，不懂的可以去学习C++
-	StrCatA(FileName,"1.txt");//让文件加上后缀名txt，1表示第一层颜色
+	StrCatA(pFileName,"1.txt");//让文件加上后缀名txt，1表示第一层颜色
 
 	for(int i=0;i<m_Color;i++)
 	{
-		f.open(FileName,ios::out);//打开用于存储第一层颜色数值的文本文档
+		f.open(pFileName,ios::out);//打开用于存储第一层颜色数值的文本文档
 		for(int j=0;j<m_Height;j++)
 		{
 			for(int k=0;k<m_Width;k++)
@@ -244,7 +248,7 @@ bool Bmp::SaveAsTxt(char* FileName)//存为文本文档
 			f<<endl;//每写完一行加上换行符
 		}
 		f.close();//关闭文件
-		FileName[strlen(FileName)-5]++;//如果颜色层数不为一，便将文件名的颜色层数的值+1
+		pFileName[strlen(pFileName)-5]++;//如果颜色层数不为一，便将文件名的颜色层数的值+1
 	}
 	return true;//保存成功，返回
 }
