@@ -8,9 +8,9 @@ public:
 	Bmp(void);//构造函数，用于初始化一个新的Bmp类
 	Bmp(char* FileName);//带有文件地址的构造函数，用于初始化一个新的Bmp类
 	~Bmp(void);//析构函数
-	bool Open(char* FileName);//打开文件函数，参数为文件地址
-	bool Save(char* FileName);//保存文件函数，参数为文件地址
-	bool SaveAsTxt(char* FileName);//存为文本函数，参数为文件地址
+	bool Open(const char* FileName);//打开文件函数，参数为文件地址
+	bool Save(const char* FileName);//保存文件函数，参数为文件地址
+	bool SaveAsTxt(const char* FileName);//存为文本函数，参数为文件地址
 	bool Close();//关闭函数，用于关闭一张图片时的内存释放
 	bool Exist();//存在函数，如果该类已经打开一张图片，返回真，否则为假
 	long GetWidth();//返回图片的宽
