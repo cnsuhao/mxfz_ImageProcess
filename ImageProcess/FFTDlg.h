@@ -57,4 +57,5 @@ private:
 public:
 	afx_msg void OnBnClickedFftcancel();
 	afx_msg void OnBnClickedOk();
+	virtual BOOL OnInitDialog();
 };

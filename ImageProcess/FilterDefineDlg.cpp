@@ -6,7 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "FilterDefineDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CFilterDefineDlg 对话框
 
@@ -259,4 +259,27 @@ void CFilterDefineDlg::OnShowWindow(BOOL bShow, UINT nStatus)
 
 	// TODO: 在此处添加消息处理程序代码
 	GetParent()->SendMessage(WM_FILTER_DEFINE_OK,m_data_divide,m_data_move);
+}
+
+BOOL CFilterDefineDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	
+	// TODO:  Add extra initialization here
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_COMBO_DEFAULT);
+	pCComboBox->InsertString(lCursor++, _T("原图"));
+	pCComboBox->InsertString(lCursor++, _T("清空"));
+	pCComboBox->InsertString(lCursor++, _T("3x3平均"));
+	pCComboBox->InsertString(lCursor++, _T("5x5平均"));
+	pCComboBox->InsertString(lCursor++, _T("1x2左右差分"));
+	pCComboBox->InsertString(lCursor++, _T("2x1上下差分"));
+	pCComboBox->InsertString(lCursor++, _T("2x2对角差分"));
+	pCComboBox->InsertString(lCursor++, _T("2x2反对角差分"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// EXCEPTION: OCX Property Pages should return FALSE
 }

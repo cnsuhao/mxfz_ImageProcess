@@ -258,6 +258,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ImageProcess.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ImageProcessDlg.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\MaskDlg.cpp"
 				>
 			</File>
@@ -271,14 +279,6 @@
 			</File>
 			<File
 				RelativePath=".\MedianDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ImageProcess.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ImageProcessDlg.cpp"
 				>
 			</File>
 			<File
@@ -356,6 +356,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MfcFun.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Resource.h"
 				>
 			</File>
@@ -382,15 +386,15 @@
 				>
 			</File>
 			<File
-				RelativePath=".\res\MFCBMP.rc2"
-				>
-			</File>
-			<File
 				RelativePath=".\res\ImageProcess.ico"
 				>
 			</File>
 			<File
 				RelativePath=".\ImageProcess.rc"
+				>
+			</File>
+			<File
+				RelativePath=".\res\MFCBMP.rc2"
 				>
 			</File>
 		</Filter>

@@ -6,8 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "MorphologyDlg.h"
 #include "afxdialogex.h"
-
-
+#include "MfcFun.h"
 // CMorphologyDlg 对话框
 
 IMPLEMENT_DYNAMIC(CMorphologyDlg, CDialogEx)
@@ -73,6 +72,16 @@ END_MESSAGE_MAP()
 
 BOOL CMorphologyDlg::OnInitDialog()
 {
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_TYPE);
+	pCComboBox->InsertString(lCursor++, _T("膨胀"));
+	pCComboBox->InsertString(lCursor++, _T("腐蚀"));
+	pCComboBox->InsertString(lCursor++, _T("开"));
+	pCComboBox->InsertString(lCursor++, _T("闭"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
 	CDialogEx::OnInitDialog();
 	m_ThresholdSld.SetRange(0,255);
 	m_ThresholdSld.SetTicFreq(1);

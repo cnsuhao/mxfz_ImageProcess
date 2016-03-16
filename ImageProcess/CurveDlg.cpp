@@ -6,7 +6,7 @@
 #include "ImageProcessDlg.h"
 #include "CurveDlg.h"
 #include "afxdialogex.h"
-
+#include "MfcFun.h"
 
 // CCurveDlg 对话框
 
@@ -512,4 +512,24 @@ void CCurveDlg::OnBnClickedBtnClear()
 	}
 	InvalidateRect(m_DrawRect,0);
 	GetParent()->PostMessage(WM_CURVE_CANCEL,NULL,NULL);
+}
+
+BOOL CCurveDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  Add extra initialization here
+	CComboBox* pCComboBox = NULL;
+	long lCursor = 0x00;
+	pCComboBox = (CComboBox*)GetDlgItem(IDC_TOOL_IMAGEPROCESS_COLOR_SELECT);
+	pCComboBox->InsertString(lCursor++, _T("RGB"));
+	pCComboBox->InsertString(lCursor++, _T("红"));
+	pCComboBox->InsertString(lCursor++, _T("绿"));
+	pCComboBox->InsertString(lCursor++, _T("蓝"));
+	pCComboBox->InsertString(lCursor++, _T("灰度"));
+	set_DropDownSize(*pCComboBox,lCursor++);// 第二个参数决定高度是显示几行
+	pCComboBox->SetCurSel(0x00);
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// EXCEPTION: OCX Property Pages should return FALSE
 }

@@ -49,4 +49,5 @@ private:
 public:
 	afx_msg void OnBnClickedBtnAddPoint();
 	afx_msg void OnBnClickedBtnClear();
+	virtual BOOL OnInitDialog();
 };

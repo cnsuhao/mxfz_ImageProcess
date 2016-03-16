@@ -39,4 +39,5 @@ private:
 public:
 	afx_msg void OnEnChangeDesW();
 	afx_msg void OnCbnSelchangeMethod();
+	virtual BOOL OnInitDialog();
 };
